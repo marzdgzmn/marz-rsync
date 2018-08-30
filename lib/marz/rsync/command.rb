@@ -1,4 +1,5 @@
 require 'marz/rsync/result'
+require 'shellwords'
 
 module Marz
   module Rsync

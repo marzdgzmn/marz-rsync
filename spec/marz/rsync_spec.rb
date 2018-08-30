@@ -51,6 +51,7 @@ RSpec.describe Marz::Rsync do
     expect(result.exitcode).to eql(0)
     expect(result.error).to be_nil
     expect(@dest.contents).to eql(@src.contents)
+    binding.pry
   end
 
 end

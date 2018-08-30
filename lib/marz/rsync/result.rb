@@ -62,7 +62,8 @@ module Marz
       # @return {String}
       def total_size
         return nil if @exitcode != 0 || @output.nil?
-        @output.match(/^*(?:total size is )(\d+\.\d+\S)/)[1]
+        #@output.match(/^*(?:total size is )(\d+\.\d+\S)/)[1]
+        @output.match(/^*(?:total size is )(\d\S*|\d+\.\d+\S*)/)[1]
       end
 
     end

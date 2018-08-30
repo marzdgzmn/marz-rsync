@@ -22,7 +22,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Minimal example
+```
+require 'marz/rsync'
+
+result = Marz::Rsync.run("/path/to/src", "/path/to/dest")
+```
+
+Complete example
+```
+require 'marz/rsync'
+
+Marz::Rsync.run("/path/to/src", "/path/to/dest") do |result|
+  if result.success?
+    puts result.total_size
+  else
+    puts result.error
+  end
+  puts result.output
+end
+```
 
 ## Development
 
