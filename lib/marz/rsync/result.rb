@@ -66,6 +66,22 @@ module Marz
         @output.match(/^*(?:total size is )(\d\S*|\d+\.\d+\S*)/)[1]
       end
 
+      # Total bytes sent
+      # @return {String}
+      def total_bytes_sent
+        return nil if @exitcode != 0 || @output.nil?
+        @output.match(/^*(?:Total bytes sent: )(\d\S*|\d+\.\d+\S*)/)[1]
+      end
+
+      # Total bytes received
+      # @return {String}
+      def total_bytes_received
+        return nil if @exitcode != 0 || @output.nil?
+        @output.match(/^*(?:Total bytes received: )(\d\S*|\d+\.\d+\S*)/)[1]
+      end
+
+
+
     end
   end
 end
